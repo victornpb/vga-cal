@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>VGA Monitor - Clock and Phase calibration pattern</title>
+  <meta name="description" content="Test patter for calibrating clock/phase of monitor with VGA connection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <meta name="theme-color" content="#fafafa">
+  <style>
+html,body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main{
+}
+
+div#clockcalib {
+    position: absolute;
+    top:0px;
+    right:0px;
+    left:0px;
+    bottom:0px;
+    border-left: 1px solid #f00;
+    border-right: 1px solid #f00;
+    background: url('./clocktest.png');
+    
+    padding: 1em;
+}
+
+.fade-out {
+  animation: fadeIn ease-out 3s 5s;
+  -webkit-animation: fadeIn ease-out 3s 5s;
+  -moz-animation: fadeIn ease-out 3s 5s;
+  -o-animation: fadeIn ease-out 3s 5s;
+  -ms-animation: fadeIn ease-out 3s 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <div id="clockcalib" onclick="openFullscreen(this)">
+    <main class="fade-out">
+        <h1>VGA Monitor - Clock and Phase calibration pattern</h1>
+        <ol>
+            <li>Click to enter Fullscreen</li>
+            <li>Press the calibration button on your monitor</li>
+        </ol>
+        <p><small>Based on <a href="http://www.lagom.nl/lcd-test/clock_phase.php#clockcalib">Lagon.nl</a> test</small></p>
+    </main>
+  </div>
+
+  <script>
+  function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+  }
+  </script>
+
+</body>
+</html>
